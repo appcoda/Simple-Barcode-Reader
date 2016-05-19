@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="83m-8T-1dt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Album Details-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AlbumDetailsViewController" customModule="CDBarcodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqa-41-yw1">
+                                <rect key="frame" x="20" y="192" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FWc-iv-6Pj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.65269396551724135" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist - Album" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-ob-cvD">
+                                <rect key="frame" x="20" y="110" width="560" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="sYb-2Z-Aq0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rqa-41-yw1" firstAttribute="top" secondItem="hmx-ob-cvD" secondAttribute="bottom" constant="8" id="7Na-LP-RxW"/>
+                            <constraint firstItem="hmx-ob-cvD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AIn-kp-Jd0"/>
+                            <constraint firstItem="hmx-ob-cvD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="Pb6-nI-PKg"/>
+                            <constraint firstItem="hmx-ob-cvD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XlF-M1-jVl"/>
+                            <constraint firstItem="Rqa-41-yw1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rSa-Kr-aKL"/>
+                            <constraint firstItem="Rqa-41-yw1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uyw-dc-kdk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Album Details" id="gRW-7Q-4hm">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="vvW-5m-9DZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O4Q-wf-t8t">
+                                <rect key="frame" x="550" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="bar-code"/>
+                                <connections>
+                                    <segue destination="DBn-zX-a5A" kind="show" id="qyZ-dC-kYs"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="artistAlbumLabel" destination="hmx-ob-cvD" id="R7d-uO-Auy"/>
+                        <outlet property="yearLabel" destination="Rqa-41-yw1" id="bFX-xW-Sbw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1384" y="493"/>
+        </scene>
+        <!--Barcode Reader-->
+        <scene sceneID="uf9-rf-t6d">
+            <objects>
+                <viewController id="DBn-zX-a5A" customClass="BarcodeReaderViewController" customModule="CDBarcodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EQQ-1T-ewH"/>
+                        <viewControllerLayoutGuide type="bottom" id="8UF-v0-gDh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M1t-fL-PCa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Barcode Reader" id="fRe-yH-f35"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gds-Bh-dqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="493"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fQY-sw-I8C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="83m-8T-1dt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cFV-ZG-M8u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gGz-Ee-GMy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBf-SC-ftu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="493"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bar-code" width="30" height="30"/>
+    </resources>
+</document>
